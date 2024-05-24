@@ -9,7 +9,9 @@ services:
       - shorty-network
     environment:
       - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/urls?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
       - SPRING_DATASOURCE_PASSWORD=root
+      - SPRING_JPA_SHOW-SQL=true
 
   db:
     ports:
@@ -17,7 +19,8 @@ services:
     image: mysql:latest
     networks:
       - shorty-network
-
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
 networks:
   shorty-network:
     driver: bridge
