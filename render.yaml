@@ -1,0 +1,12 @@
+# Exported from Render on 2024-05-24T11:13:04Z
+services:
+- type: web
+  name: shorty-shortener
+  runtime: docker
+  repo: https://github.com/SumitDas2004/shorty-shortener
+  plan: free
+  region: oregon
+  dockerCommand: docker-compose up
+  dockerContext: .
+  dockerfilePath: ./Dockerfile
+version: "1"
