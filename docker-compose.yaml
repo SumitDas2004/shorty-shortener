@@ -1,0 +1,23 @@
+services:
+  app:
+    depends_on: 
+      - db
+    build: .
+    ports:
+      - 8000:8000
+    networks:
+      - shorty-network
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/urls
+      - SPRING_DATASOURCE_PASSWORD=root
+
+  db:
+    ports:
+      - 3306:3306
+    image: mysql:latest
+    networks:
+      - shorty-network
+
+networks:
+  shorty-network:
+    driver: bridge
