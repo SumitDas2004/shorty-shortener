@@ -1,0 +1,17 @@
+services:
+  - name: app
+    type: web
+    runtime: docker
+    envVars: 
+      - key: SPRING_DATASOURCE_URL
+        value: jdbc:mysql://db:3306/urls?createDatabaseIfNotExist=true
+      - key: SPRING_DATASOURCE_PASSWORD
+        value: root
+      - key: PORT
+        value: 8000
+
+databases:
+  - name: db
+    databaseName: db
+    user: root
+    postgresMajorVersion: 14

@@ -8,7 +8,7 @@ services:
     networks:
       - shorty-network
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/urls
+      - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/urls?createDatabaseIfNotExist=true
       - SPRING_DATASOURCE_PASSWORD=root
 
   db:
